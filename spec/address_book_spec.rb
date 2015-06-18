@@ -76,4 +76,12 @@ RSpec.describe AddressBook do
     end
   end
 
+  context "assignment: imports from entries_2.csv" do
+    it "imports data from entries_2.csv with 3 entries" do
+         book.import_from_csv("entries_2.csv")
+         book_size = book.entries.size
+         expect(book_size).to eql 3
+    end
+  end
+
 end
